@@ -6,8 +6,13 @@ CAMINHO_JSON = "pilotos.json"
 def carregar_pilotos():
     if not os.path.exists(CAMINHO_JSON):
         return {}
-    with open(CAMINHO_JSON, "r", encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(CAMINHO_JSON, "r", encoding="utf-8-sig") as f:
+            return json.load(f)
+    except UnicodeDecodeError:
+        # Tenta uma codificação alternativa se UTF-8-SIG falhar
+        with open(CAMINHO_JSON, "r", encoding="latin-1") as f:
+            return json.load(f)
 
 def salvar_pilotos(pilotos):
     with open(CAMINHO_JSON, "w", encoding="utf-8") as f:
