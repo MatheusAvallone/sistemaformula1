@@ -131,11 +131,11 @@
         "equipe": "McLaren",
         "titulos": 0,
         "estatisticas": {
-            "corridas": 22,
-            "vitorias": 0,
-            "podios": 2,
-            "poles": 1,
-            "voltas_mais_rapidas": 1
+            "corridas": 50,
+            "vitorias": 4,
+            "podios": 13,
+            "poles": 2,
+            "voltas_mais_rapidas": 4
         },
         "historico_equipes": [
             "McLaren"

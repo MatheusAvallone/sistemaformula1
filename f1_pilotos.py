@@ -2,6 +2,7 @@ import json
 import os
 
 CAMINHO_JSON = "pilotos.json"
+CAMINHO_PISTAS = "C:/Users/Matheus/Documents/PROJETOS/pistas.json"
 
 def carregar_pilotos():
     if not os.path.exists(CAMINHO_JSON):
@@ -13,6 +14,15 @@ def carregar_pilotos():
         # Tenta uma codificação alternativa se UTF-8-SIG falhar
         with open(CAMINHO_JSON, "r", encoding="latin-1") as f:
             return json.load(f)
+
+        def carregar_pistas():
+            try:
+                with open(CAMINHO_PISTAS, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except FileNotFoundError:
+                return {}
+
+
 
 def salvar_pilotos(pilotos):
     with open(CAMINHO_JSON, "w", encoding="utf-8") as f:
