@@ -6,6 +6,7 @@ import os
 import ttkbootstrap as ttkb
 import unicodedata
 
+
 # ========== Cores F1 ==========
 COR_FUNDO = "#111111"
 COR_TEXTO = "#ffffff"
@@ -648,7 +649,7 @@ def mostrar_titulos():
     for widget in conteudo_frame.winfo_children():
         widget.destroy()
 
-    titulos_label = ttkb.Label(
+    titulos_label = ttk.Label(
         conteudo_frame,
         text="Campeões de Fórmula 1 (1950-2024)",
         font=("Arial", 20, "bold")  # Aumentei o tamanho da fonte
@@ -657,7 +658,7 @@ def mostrar_titulos():
 
     # Frame que segura a tabela
     tabela_frame = tk.Frame(conteudo_frame, bg=COR_FUNDO)
-    tabela_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
+    tabela_frame.pack()
 
     # Scrollbar vertical
     scrollbar = ttk.Scrollbar(tabela_frame)
@@ -722,11 +723,10 @@ def mostrar_titulos():
     )
     voltar_button.pack(pady=20)
 
-    import tkinter as tk
-from tkinter import ttk
-import random
+
 
 def iniciar_quiz():
+
     for widget in conteudo_frame.winfo_children():
         widget.destroy()
     
@@ -767,6 +767,7 @@ def iniciar_quiz():
     ]
     
     # Embaralha as perguntas para que sejam apresentadas de maneira aleatória
+    import random 
     random.shuffle(perguntas)
     
     # Variáveis globais para controle do quiz
