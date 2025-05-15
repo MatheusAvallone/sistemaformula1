@@ -1,0 +1,57 @@
+[
+    {
+        "nome": "Ayrton Senna",
+        "nacionalidade": "Brasil",
+        "titulos": 3,
+        "vitorias": 41,
+        "poles": 65,
+        "podios": 80,
+        "anos_ativo": "1984-1994",
+        "equipes_principais": ["Toleman", "Lotus", "McLaren", "Williams"],
+        "bio": "Considerado um dos maiores pilotos de todos os tempos, Ayrton Senna conquistou três campeonatos mundiais e estabeleceu recordes impressionantes, especialmente em condições de chuva."
+    },
+    {
+        "nome": "Michael Schumacher",
+        "nacionalidade": "Alemanha",
+        "titulos": 7,
+        "vitorias": 91,
+        "poles": 68,
+        "podios": 155,
+        "anos_ativo": "1991-2006, 2010-2012",
+        "equipes_principais": ["Jordan", "Benetton", "Ferrari", "Mercedes"],
+        "bio": "O piloto mais bem-sucedido da história da F1 até 2020, Schumacher revolucionou o esporte com sua dedicação, preparo físico e capacidade técnica."
+    },
+    {
+        "nome": "Juan Manuel Fangio",
+        "nacionalidade": "Argentina",
+        "titulos": 5,
+        "vitorias": 24,
+        "poles": 29,
+        "podios": 35,
+        "anos_ativo": "1950-1958",
+        "equipes_principais": ["Alfa Romeo", "Ferrari", "Maserati", "Mercedes"],
+        "bio": "O primeiro grande nome da F1, Fangio conquistou cinco títulos com quatro equipes diferentes, demonstrando uma versatilidade única."
+    },
+    {
+        "nome": "Alain Prost",
+        "nacionalidade": "França",
+        "titulos": 4,
+        "vitorias": 51,
+        "poles": 33,
+        "podios": 106,
+        "anos_ativo": "1980-1991, 1993",
+        "equipes_principais": ["McLaren", "Renault", "Ferrari", "Williams"],
+        "bio": "Conhecido como 'O Professor' por sua abordagem inteligente e calculista nas corridas, Prost conquistou quatro títulos mundiais e formou com Senna uma das maiores rivalidades do esporte."
+    },
+    {
+        "nome": "Nelson Piquet",
+        "nacionalidade": "Brasil",
+        "titulos": 3,
+        "vitorias": 23,
+        "poles": 24,
+        "podios": 60,
+        "anos_ativo": "1978-1991",
+        "equipes_principais": ["Brabham", "Williams", "Lotus", "Benetton"],
+        "bio": "Um dos maiores pilotos brasileiros da história, Nelson Piquet conquistou três títulos mundiais com sua habilidade técnica excepcional e capacidade de desenvolvimento de carros."
+    }
+] 

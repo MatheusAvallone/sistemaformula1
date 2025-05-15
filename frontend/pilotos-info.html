@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Fórmula 1 - Info Pilotos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/icons.css">
+    <style>
+        .piloto-card {
+            background-color: var(--bg-card-dark);
+            color: var(--text-primary-dark);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-dark);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .piloto-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--hover-dark);
+        }
+
+        .piloto-img-container {
+            position: relative;
+            padding-top: 75%;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: var(--bg-dark);
+            margin-bottom: 1rem;
+        }
+
+        .piloto-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .piloto-card:hover .piloto-img {
+            transform: scale(1.05);
+        }
+
+        .piloto-info {
+            padding: 1rem 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .piloto-header {
+            margin-bottom: 1rem;
+        }
+
+        .piloto-header h3 {
+            margin: 0;
+            color: var(--text-primary-dark);
+            font-size: 1.5rem;
+        }
+
+        .piloto-numero {
+            font-size: 1.1rem;
+            color: var(--text-secondary-dark);
+            margin: 0.5rem 0;
+        }
+
+        .piloto-equipe {
+            color: var(--text-secondary-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .piloto-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+
+        .piloto-stat {
+            background-color: var(--bg-dark);
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-dark);
+        }
+
+        .piloto-stat span {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--text-primary-dark);
+            line-height: 1;
+        }
+
+        .piloto-stat small {
+            color: var(--text-secondary-dark);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .piloto-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .piloto-actions .btn {
+            flex: 1;
+            max-width: 120px;
+            white-space: nowrap;
+        }
+
+        /* Modal customization */
+        .modal-content {
+            background-color: var(--bg-card-dark);
+            color: var(--text-primary-dark);
+            border: 1px solid var(--border-dark);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">F1 Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Pilotos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pilotos-info.html">Info Pilotos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="classificacao.html">Classificação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="circuitos.html">Circuitos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lendas.html">Lendas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-light mb-4">Informações dos Pilotos</h2>
+        <div class="row" id="pilotosInfoContainer">
+            <!-- As informações dos pilotos serão inseridas aqui dinamicamente -->
+        </div>
+    </div>
+
+    <!-- Modal de Edição de Estatísticas -->
+    <div class="modal fade" id="editarEstatisticasModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Estatísticas do Piloto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="estatisticasForm">
+                        <input type="hidden" id="pilotoNumero">
+                        <div class="mb-3">
+                            <label for="pontos" class="form-label">Pontos</label>
+                            <input type="number" class="form-control" id="pontos" required min="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="vitorias" class="form-label">Vitórias</label>
+                            <input type="number" class="form-control" id="vitorias" required min="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="poles" class="form-label">Poles</label>
+                            <input type="number" class="form-control" id="poles" required min="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="voltasRapidas" class="form-label">Voltas Mais Rápidas</label>
+                            <input type="number" class="form-control" id="voltasRapidas" required min="0">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="salvarEstatisticas()">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/common.js"></script>
+    <script src="static/js/pilotos-info.js"></script>
+</body>
+</html> 

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Fórmula 1 - Classificação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .classificacao-container {
+            background-color: var(--bg-card-dark);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-dark);
+        }
+
+        .table-dark {
+            --bs-table-bg: transparent;
+            --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+            margin: 0;
+        }
+
+        .table-dark th {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--text-primary-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            padding: 1rem;
+            border-bottom: 2px solid var(--border-dark);
+        }
+
+        .table-dark td {
+            padding: 1rem;
+            vertical-align: middle;
+            border-bottom: 1px solid var(--border-dark);
+            transition: background-color 0.2s ease;
+        }
+
+        .table-dark tr:hover td {
+            background-color: var(--hover-dark);
+        }
+
+        .position-cell {
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 80px;
+            text-align: center;
+        }
+
+        .position-1 {
+            color: #ffd700;
+            font-size: 1.4rem;
+        }
+
+        .position-2 {
+            color: #c0c0c0;
+            font-size: 1.3rem;
+        }
+
+        .position-3 {
+            color: #cd7f32;
+            font-size: 1.2rem;
+        }
+
+        .piloto-cell {
+            font-weight: 500;
+        }
+
+        .equipe-cell {
+            color: var(--text-secondary-dark);
+        }
+
+        .stats-cell {
+            font-weight: 600;
+            text-align: center;
+            width: 100px;
+        }
+
+        .pontos-cell {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #0d6efd;
+            text-align: center;
+            width: 100px;
+        }
+
+        .stats-badge {
+            background-color: var(--bg-dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            min-width: 60px;
+        }
+
+        .vitorias-badge {
+            background-color: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+        }
+
+        .poles-badge {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .classificacao-container {
+                padding: 1rem;
+            }
+
+            .table-dark th,
+            .table-dark td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .stats-badge {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">F1 Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Pilotos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pilotos-info.html">Info Pilotos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="classificacao.html">Classificação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="circuitos.html">Circuitos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lendas.html">Lendas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-light mb-4">Classificação do Campeonato</h2>
+        <div class="classificacao-container">
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Piloto</th>
+                            <th>Equipe</th>
+                            <th>Pontos</th>
+                            <th>Vitórias</th>
+                            <th>Poles</th>
+                        </tr>
+                    </thead>
+                    <tbody id="classificacaoBody">
+                        <!-- A classificação será inserida aqui dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/common.js"></script>
+    <script src="static/js/classificacao.js"></script>
+</body>
+</html> 

@@ -1,0 +1,113 @@
+.circuito-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    min-height: 600px; /* Altura mínima aumentada */
+}
+
+.circuito-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.circuito-img-container {
+    position: relative;
+    padding-top: 85%; /* Aumentado para dar mais espaço para a imagem */
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    background-color: #f8f9fa;
+}
+
+.circuito-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1.5rem; /* Padding aumentado */
+    transition: opacity 0.3s ease;
+    background-color: #fff;
+}
+
+.circuito-img.loading {
+    opacity: 0;
+}
+
+.circuito-img-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background-color: #dee2e6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circuito-img-placeholder::after {
+    content: '🏎️';
+    font-size: 2rem;
+}
+
+.card-body {
+    padding: 2rem; /* Padding aumentado */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: #212529;
+    font-size: 1.5rem; /* Tamanho da fonte aumentado */
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    min-height: 3.5rem; /* Altura mínima aumentada */
+}
+
+.circuito-data {
+    color: #6c757d;
+    font-size: 1.1rem; /* Tamanho da fonte aumentado */
+    margin-bottom: 1.5rem;
+}
+
+.circuito-info {
+    color: #495057;
+    flex-grow: 1;
+    font-size: 1.1rem; /* Tamanho da fonte aumentado */
+}
+
+.circuito-info p {
+    margin-bottom: 0.8rem; /* Espaçamento aumentado */
+    line-height: 1.5;
+}
+
+.circuito-info strong {
+    color: #212529;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px; /* Largura mínima aumentada */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-title {
+        min-height: auto;
+    }
+    
+    .circuito-img-container {
+        padding-top: 75%; /* Ajustado para telas menores */
+    }
+
+    .circuito-card {
+        min-height: 500px; /* Altura mínima ajustada para mobile */
+    }
+} 

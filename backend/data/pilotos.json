@@ -1,0 +1,162 @@
+[
+    {
+        "nome": "Max Verstappen",
+        "equipe": "Red Bull Racing ",
+        "numero": 1,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Yuki Tsunoda",
+        "equipe": "Red Bull Racing ",
+        "numero": 22,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Lando Norris ",
+        "equipe": "McLaren Formula 1 Team",
+        "numero": 4,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Oscar Piastri",
+        "equipe": "McLaren Formula 1 Team",
+        "numero": 81,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Andrea Kimi Antonelli",
+        "equipe": " Mercedes-AMG Petronas Formula One Team",
+        "numero": 12,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "George Russel",
+        "equipe": " Mercedes-AMG Petronas Formula One Team",
+        "numero": 63,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Charles Leclerc",
+        "equipe": "Scuderia Ferrari",
+        "numero": 16,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Lewis Hamilton",
+        "equipe": "Scuderia Ferrari",
+        "numero": 44,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Jack Doohan",
+        "equipe": " BWT Alpine Formula One Team",
+        "numero": 7,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Pierry Gasly",
+        "equipe": " BWT Alpine Formula One Team",
+        "numero": 10,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Fernando Alonso",
+        "equipe": "Aston Martin Aramco Formula One Team",
+        "numero": 14,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Lance Stroll",
+        "equipe": "Aston Martin Aramco Formula One Team",
+        "numero": 18,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Esteban Ocon",
+        "equipe": "MoneyGram Haas F1 Team",
+        "numero": 31,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Oliver Bearman",
+        "equipe": "MoneyGram Haas F1 Team",
+        "numero": 87,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Gabriel Bortoleto",
+        "equipe": "Stake F1 Team Kick Sauber",
+        "numero": 5,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Nico Hülkenberg",
+        "equipe": "Stake F1 Team Kick Sauber",
+        "numero": 27,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Isack Hadjar",
+        "equipe": "Alpha Tauri Red Bull ",
+        "numero": 6,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Liam Lawson",
+        "equipe": "Alpha Tauri Red Bull",
+        "numero": 30,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Alexander Albon",
+        "equipe": "Atlassian Williams Racing",
+        "numero": 23,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    },
+    {
+        "nome": "Carlos Sainz Jr.",
+        "equipe": "Atlassian Williams Racing",
+        "numero": 55,
+        "pontos": 0,
+        "vitorias": 0,
+        "poles": 0
+    }
+]

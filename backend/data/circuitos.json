@@ -1,0 +1,211 @@
+{
+    "circuitos": [
+        {
+            "nome": "Circuito de Bahrein",
+            "pais": "Bahrein",
+            "cidade": "Sakhir",
+            "data_corrida": "2025-03-02",
+            "comprimento": 5.412,
+            "num_voltas": 57,
+            "recorde_volta": "1:31.447 - Pedro de la Rosa (2005)"
+        },
+        {
+            "nome": "Circuito da Arábia Saudita",
+            "pais": "Arábia Saudita",
+            "cidade": "Jeddah",
+            "data_corrida": "2025-03-09",
+            "comprimento": 6.174,
+            "num_voltas": 50,
+            "recorde_volta": "1:30.734 - Lewis Hamilton (2021)"
+        },
+        {
+            "nome": "Circuito da Austrália",
+            "pais": "Austrália",
+            "cidade": "Melbourne",
+            "data_corrida": "2025-03-23",
+            "comprimento": 5.303,
+            "num_voltas": 58,
+            "recorde_volta": "1:20.235 - Charles Leclerc (2022)"
+        },
+        {
+            "nome": "Circuito do Japão",
+            "pais": "Japão",
+            "cidade": "Suzuka",
+            "data_corrida": "2025-04-06",
+            "comprimento": 5.807,
+            "num_voltas": 53,
+            "recorde_volta": "1:30.983 - Lewis Hamilton (2019)"
+        },
+        {
+            "nome": "Circuito da China",
+            "pais": "China",
+            "cidade": "Xangai",
+            "data_corrida": "2025-04-20",
+            "comprimento": 5.451,
+            "num_voltas": 56,
+            "recorde_volta": "1:32.238 - Michael Schumacher (2004)"
+        },
+        {
+            "nome": "Circuito de Miami",
+            "pais": "Estados Unidos",
+            "cidade": "Miami",
+            "data_corrida": "2025-05-04",
+            "comprimento": 5.412,
+            "num_voltas": 57,
+            "recorde_volta": "1:29.708 - Max Verstappen (2023)"
+        },
+        {
+            "nome": "Circuito da Emilia Romagna",
+            "pais": "Itália",
+            "cidade": "Imola",
+            "data_corrida": "2025-05-18",
+            "comprimento": 4.909,
+            "num_voltas": 63,
+            "recorde_volta": "1:15.484 - Lewis Hamilton (2020)"
+        },
+        {
+            "nome": "Circuito de Mônaco",
+            "pais": "Mônaco",
+            "cidade": "Monte Carlo",
+            "data_corrida": "2025-05-25",
+            "comprimento": 3.337,
+            "num_voltas": 78,
+            "recorde_volta": "1:12.909 - Lewis Hamilton (2021)"
+        },
+        {
+            "nome": "Circuito do Canadá",
+            "pais": "Canadá",
+            "cidade": "Montreal",
+            "data_corrida": "2025-06-08",
+            "comprimento": 4.361,
+            "num_voltas": 70,
+            "recorde_volta": "1:13.078 - Valtteri Bottas (2019)"
+        },
+        {
+            "nome": "Circuito da Espanha",
+            "pais": "Espanha",
+            "cidade": "Barcelona",
+            "data_corrida": "2025-06-22",
+            "comprimento": 4.675,
+            "num_voltas": 66,
+            "recorde_volta": "1:18.149 - Max Verstappen (2021)"
+        },
+        {
+            "nome": "Circuito da Áustria",
+            "pais": "Áustria",
+            "cidade": "Spielberg",
+            "data_corrida": "2025-06-29",
+            "comprimento": 4.318,
+            "num_voltas": 71,
+            "recorde_volta": "1:05.619 - Carlos Sainz (2020)"
+        },
+        {
+            "nome": "Circuito da Grã-Bretanha",
+            "pais": "Reino Unido",
+            "cidade": "Silverstone",
+            "data_corrida": "2025-07-06",
+            "comprimento": 5.891,
+            "num_voltas": 52,
+            "recorde_volta": "1:27.097 - Max Verstappen (2020)"
+        },
+        {
+            "nome": "Circuito da Hungria",
+            "pais": "Hungria",
+            "cidade": "Budapeste",
+            "data_corrida": "2025-07-20",
+            "comprimento": 4.381,
+            "num_voltas": 70,
+            "recorde_volta": "1:16.627 - Lewis Hamilton (2020)"
+        },
+        {
+            "nome": "Circuito da Bélgica",
+            "pais": "Bélgica",
+            "cidade": "Spa-Francorchamps",
+            "data_corrida": "2025-07-27",
+            "comprimento": 7.004,
+            "num_voltas": 44,
+            "recorde_volta": "1:46.286 - Valtteri Bottas (2018)"
+        },
+        {
+            "nome": "Circuito da Holanda",
+            "pais": "Holanda",
+            "cidade": "Zandvoort",
+            "data_corrida": "2025-08-24",
+            "comprimento": 4.259,
+            "num_voltas": 72,
+            "recorde_volta": "1:11.097 - Lewis Hamilton (2021)"
+        },
+        {
+            "nome": "Circuito da Itália",
+            "pais": "Itália",
+            "cidade": "Monza",
+            "data_corrida": "2025-09-07",
+            "comprimento": 5.793,
+            "num_voltas": 53,
+            "recorde_volta": "1:21.046 - Rubens Barrichello (2004)"
+        },
+        {
+            "nome": "Circuito do Azerbaijão",
+            "pais": "Azerbaijão",
+            "cidade": "Baku",
+            "data_corrida": "2025-09-21",
+            "comprimento": 6.003,
+            "num_voltas": 51,
+            "recorde_volta": "1:43.009 - Charles Leclerc (2019)"
+        },
+        {
+            "nome": "Circuito de Singapura",
+            "pais": "Singapura",
+            "cidade": "Singapura",
+            "data_corrida": "2025-10-05",
+            "comprimento": 5.063,
+            "num_voltas": 61,
+            "recorde_volta": "1:41.905 - Kevin Magnussen (2018)"
+        },
+        {
+            "nome": "Circuito dos Estados Unidos",
+            "pais": "Estados Unidos",
+            "cidade": "Austin",
+            "data_corrida": "2025-10-19",
+            "comprimento": 5.513,
+            "num_voltas": 56,
+            "recorde_volta": "1:36.169 - Charles Leclerc (2019)"
+        },
+        {
+            "nome": "Circuito do México",
+            "pais": "México",
+            "cidade": "Cidade do México",
+            "data_corrida": "2025-10-26",
+            "comprimento": 4.304,
+            "num_voltas": 71,
+            "recorde_volta": "1:17.774 - Valtteri Bottas (2021)"
+        },
+        {
+            "nome": "Circuito do Brasil",
+            "pais": "Brasil",
+            "cidade": "São Paulo",
+            "data_corrida": "2025-11-09",
+            "comprimento": 4.309,
+            "num_voltas": 71,
+            "recorde_volta": "1:10.540 - Valtteri Bottas (2018)"
+        },
+        {
+            "nome": "Circuito de Las Vegas",
+            "pais": "Estados Unidos",
+            "cidade": "Las Vegas",
+            "data_corrida": "2025-11-23",
+            "comprimento": 6.201,
+            "num_voltas": 50,
+            "recorde_volta": "1:35.490 - Oscar Piastri (2023)"
+        },
+        {
+            "nome": "Circuito de Abu Dhabi",
+            "pais": "Emirados Árabes Unidos",
+            "cidade": "Abu Dhabi",
+            "data_corrida": "2025-12-07",
+            "comprimento": 5.281,
+            "num_voltas": 58,
+            "recorde_volta": "1:26.103 - Max Verstappen (2021)"
+        }
+    ]
+} 

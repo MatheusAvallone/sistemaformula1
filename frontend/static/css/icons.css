@@ -1,0 +1,35 @@
+.piloto-img-placeholder {
+    display: none;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #dee2e6;
+    border-radius: 50%;
+}
+
+.piloto-img-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background-color: #adb5bd;
+    border-radius: 50%;
+}
+
+.piloto-img-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    background-color: #adb5bd;
+    border-radius: 20px 20px 0 0;
+} 
