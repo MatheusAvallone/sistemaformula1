@@ -265,6 +265,33 @@
                                     <label for="equipe" class="form-label">Equipe</label>
                                     <input type="text" class="form-control" id="equipe" required>
                                 </div>
+
+                                <!-- Campos de estatísticas (visíveis apenas no modo de edição) -->
+                                <div id="estatisticasEdicao" style="display: none;">
+                                    <hr class="my-4">
+                                    <h5 class="text-light mb-3">Estatísticas</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="pontosEdicao" class="form-label">Pontos</label>
+                                                <input type="number" class="form-control" id="pontosEdicao" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="vitoriasEdicao" class="form-label">Vitórias</label>
+                                                <input type="number" class="form-control" id="vitoriasEdicao" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="polesEdicao" class="form-label">Poles</label>
+                                                <input type="number" class="form-control" id="polesEdicao" value="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <button type="submit" class="btn btn-adicionar">Adicionar Piloto</button>
                             </form>
                         </div>
@@ -291,7 +318,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="posicaoCorrida" class="form-label">Posição Final</label>
+                                        <label for="posicaoCorrida" class="form-label">Posição Final GP</label>
                                         <select class="form-select" id="posicaoCorrida" required>
                                             <option value="">Selecione a posição</option>
                                             <option value="1">1º Lugar (25 pts)</option>
@@ -327,6 +354,40 @@
                                                 Fez a volta mais rápida (+1 pt)
                                             </label>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h6 class="text-light mb-3">Sprint Race</h6>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label for="posicaoSprint" class="form-label">Posição Final Sprint</label>
+                                        <select class="form-select" id="posicaoSprint">
+                                            <option value="">Não participou/Não completou</option>
+                                            <option value="1">1º Lugar (8 pts)</option>
+                                            <option value="2">2º Lugar (7 pts)</option>
+                                            <option value="3">3º Lugar (6 pts)</option>
+                                            <option value="4">4º Lugar (5 pts)</option>
+                                            <option value="5">5º Lugar (4 pts)</option>
+                                            <option value="6">6º Lugar (3 pts)</option>
+                                            <option value="7">7º Lugar (2 pts)</option>
+                                            <option value="8">8º Lugar (1 pt)</option>
+                                            <option value="9">9º Lugar</option>
+                                            <option value="10">10º Lugar</option>
+                                            <option value="11">11º Lugar</option>
+                                            <option value="12">12º Lugar</option>
+                                            <option value="13">13º Lugar</option>
+                                            <option value="14">14º Lugar</option>
+                                            <option value="15">15º Lugar</option>
+                                            <option value="16">16º Lugar</option>
+                                            <option value="17">17º Lugar</option>
+                                            <option value="18">18º Lugar</option>
+                                            <option value="19">19º Lugar</option>
+                                            <option value="20">20º Lugar</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

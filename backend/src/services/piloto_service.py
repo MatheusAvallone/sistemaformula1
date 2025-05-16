@@ -55,4 +55,17 @@ class PilotoService:
             piloto.pontos += pontos
             self._save_pilotos()
             return piloto
+        return None
+
+    def atualizar_estatisticas(self, numero, estatisticas):
+        piloto = self.get_piloto_by_numero(numero)
+        if piloto:
+            if 'pontos' in estatisticas:
+                piloto.pontos += estatisticas['pontos']
+            if 'vitorias' in estatisticas:
+                piloto.vitorias += estatisticas['vitorias']
+            if 'poles' in estatisticas:
+                piloto.poles += estatisticas['poles']
+            self._save_pilotos()
+            return piloto
         return None 

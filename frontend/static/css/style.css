@@ -4,7 +4,9 @@
     --text-primary-dark: #ffffff;
     --text-secondary-dark: #b3b3b3;
     --border-dark: #2d2d2d;
-    --hover-dark: #2d2d2d;
+    --hover-dark: rgba(255, 255, 255, 0.05);
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --card-hover-shadow: rgba(61, 139, 253, 0.3);
 }
 
 body {
@@ -90,22 +92,42 @@ body {
 .circuito-card {
     background-color: var(--bg-card-dark);
     color: var(--text-primary-dark);
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
     margin-bottom: 2rem;
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow);
 }
 
 .circuito-card:hover {
     transform: translateY(-5px);
-    background-color: var(--hover-dark);
+    border-color: rgba(61, 139, 253, 0.5);
+    box-shadow: 0 8px 16px var(--card-hover-shadow);
+    background-color: var(--bg-card-dark);
 }
 
 .circuito-info {
-    padding: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-dark);
 }
 
 .circuito-data {
     color: var(--text-secondary-dark);
     font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.circuito-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.circuito-card h3 {
+    color: var(--text-primary-dark);
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
 }
 
 /* Estilos para as lendas */
@@ -159,11 +181,11 @@ section {
     scroll-margin-top: 80px; /* Para o scroll suave com o header fixo */
 }
 
-/* Hover states */
+/* Removendo o hover escuro geral */
 .card:hover,
 .circuito-card:hover,
 .lenda-card:hover {
-    background-color: var(--hover-dark);
+    background-color: var(--bg-card-dark);
 }
 
 /* Table hover */

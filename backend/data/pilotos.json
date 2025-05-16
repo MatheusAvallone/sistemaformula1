@@ -3,15 +3,15 @@
         "nome": "Max Verstappen",
         "equipe": "Red Bull Racing ",
         "numero": 1,
-        "pontos": 0,
-        "vitorias": 0,
-        "poles": 0
+        "pontos": 99,
+        "vitorias": 1,
+        "poles": 3
     },
     {
         "nome": "Yuki Tsunoda",
         "equipe": "Red Bull Racing ",
         "numero": 22,
-        "pontos": 0,
+        "pontos": 9,
         "vitorias": 0,
         "poles": 0
     },
@@ -19,23 +19,23 @@
         "nome": "Lando Norris ",
         "equipe": "McLaren Formula 1 Team",
         "numero": 4,
-        "pontos": 0,
-        "vitorias": 0,
-        "poles": 0
+        "pontos": 115,
+        "vitorias": 2,
+        "poles": 2
     },
     {
         "nome": "Oscar Piastri",
         "equipe": "McLaren Formula 1 Team",
         "numero": 81,
-        "pontos": 0,
-        "vitorias": 0,
-        "poles": 0
+        "pontos": 131,
+        "vitorias": 3,
+        "poles": 1
     },
     {
         "nome": "Andrea Kimi Antonelli",
         "equipe": " Mercedes-AMG Petronas Formula One Team",
         "numero": 12,
-        "pontos": 0,
+        "pontos": 48,
         "vitorias": 0,
         "poles": 0
     },
@@ -43,7 +43,7 @@
         "nome": "George Russel",
         "equipe": " Mercedes-AMG Petronas Formula One Team",
         "numero": 63,
-        "pontos": 0,
+        "pontos": 93,
         "vitorias": 0,
         "poles": 0
     },
@@ -51,7 +51,7 @@
         "nome": "Charles Leclerc",
         "equipe": "Scuderia Ferrari",
         "numero": 16,
-        "pontos": 0,
+        "pontos": 53,
         "vitorias": 0,
         "poles": 0
     },
@@ -59,7 +59,7 @@
         "nome": "Lewis Hamilton",
         "equipe": "Scuderia Ferrari",
         "numero": 44,
-        "pontos": 0,
+        "pontos": 41,
         "vitorias": 0,
         "poles": 0
     },
@@ -75,7 +75,7 @@
         "nome": "Pierry Gasly",
         "equipe": " BWT Alpine Formula One Team",
         "numero": 10,
-        "pontos": 0,
+        "pontos": 7,
         "vitorias": 0,
         "poles": 0
     },
@@ -91,7 +91,7 @@
         "nome": "Lance Stroll",
         "equipe": "Aston Martin Aramco Formula One Team",
         "numero": 18,
-        "pontos": 0,
+        "pontos": 14,
         "vitorias": 0,
         "poles": 0
     },
@@ -99,7 +99,7 @@
         "nome": "Esteban Ocon",
         "equipe": "MoneyGram Haas F1 Team",
         "numero": 31,
-        "pontos": 0,
+        "pontos": 14,
         "vitorias": 0,
         "poles": 0
     },
@@ -107,7 +107,7 @@
         "nome": "Oliver Bearman",
         "equipe": "MoneyGram Haas F1 Team",
         "numero": 87,
-        "pontos": 0,
+        "pontos": 6,
         "vitorias": 0,
         "poles": 0
     },
@@ -123,7 +123,7 @@
         "nome": "Nico Hülkenberg",
         "equipe": "Stake F1 Team Kick Sauber",
         "numero": 27,
-        "pontos": 0,
+        "pontos": 6,
         "vitorias": 0,
         "poles": 0
     },
@@ -131,7 +131,7 @@
         "nome": "Isack Hadjar",
         "equipe": "Alpha Tauri Red Bull ",
         "numero": 6,
-        "pontos": 0,
+        "pontos": 5,
         "vitorias": 0,
         "poles": 0
     },
@@ -147,7 +147,7 @@
         "nome": "Alexander Albon",
         "equipe": "Atlassian Williams Racing",
         "numero": 23,
-        "pontos": 0,
+        "pontos": 30,
         "vitorias": 0,
         "poles": 0
     },
@@ -155,7 +155,7 @@
         "nome": "Carlos Sainz Jr.",
         "equipe": "Atlassian Williams Racing",
         "numero": 55,
-        "pontos": 0,
+        "pontos": 7,
         "vitorias": 0,
         "poles": 0
     }

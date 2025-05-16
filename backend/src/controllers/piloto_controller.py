@@ -45,4 +45,12 @@ def atualizar_pontos(numero):
     piloto = piloto_service.atualizar_pontos(numero, pontos)
     if piloto:
         return jsonify(piloto.to_dict())
+    return jsonify({"error": "Piloto não encontrado"}), 404
+
+@piloto_bp.route('/pilotos/<int:numero>/estatisticas', methods=['PUT'])
+def atualizar_estatisticas(numero):
+    data = request.get_json()
+    piloto = piloto_service.atualizar_estatisticas(numero, data)
+    if piloto:
+        return jsonify(piloto.to_dict())
     return jsonify({"error": "Piloto não encontrado"}), 404 

@@ -73,6 +73,14 @@ async function editarPiloto(numero) {
         document.getElementById('nome').value = piloto.nome;
         document.getElementById('equipe').value = piloto.equipe;
         
+        // Preencher os campos de estatísticas
+        document.getElementById('pontosEdicao').value = piloto.pontos || 0;
+        document.getElementById('vitoriasEdicao').value = piloto.vitorias || 0;
+        document.getElementById('polesEdicao').value = piloto.poles || 0;
+        
+        // Mostrar campos de estatísticas
+        document.getElementById('estatisticasEdicao').style.display = 'block';
+        
         // Mudar o texto do botão
         const submitButton = document.querySelector('#pilotoForm button[type="submit"]');
         submitButton.textContent = 'Atualizar Piloto';
@@ -80,6 +88,9 @@ async function editarPiloto(numero) {
         // Adicionar classe para indicar modo de edição
         document.getElementById('pilotoForm').classList.add('modo-edicao');
         document.getElementById('numero').readOnly = true;
+
+        // Salvar o número do piloto sendo editado
+        document.getElementById('pilotoForm').dataset.editandoNumero = numero;
     } catch (error) {
         showError('Erro ao carregar dados do piloto');
     }
@@ -112,11 +123,23 @@ const PONTUACAO_F1 = {
     '10': 1
 };
 
+// Sistema de pontuação Sprint Race F1 2025
+const PONTUACAO_SPRINT = {
+    '1': 8,
+    '2': 7,
+    '3': 6,
+    '4': 5,
+    '5': 4,
+    '6': 3,
+    '7': 2,
+    '8': 1
+};
+
 // Função para calcular pontos baseado na posição
-function calcularPontos(posicao, voltaMaisRapida) {
+function calcularPontos(posicao, voltaMaisRapida, posicaoSprint) {
     let pontos = 0;
     
-    // Adiciona pontos pela posição
+    // Adiciona pontos pela posição no GP
     if (posicao && posicao !== 'DNF' && PONTUACAO_F1[posicao]) {
         pontos += PONTUACAO_F1[posicao];
         
@@ -124,6 +147,11 @@ function calcularPontos(posicao, voltaMaisRapida) {
         if (voltaMaisRapida && parseInt(posicao) <= 10) {
             pontos += 1;
         }
+    }
+
+    // Adiciona pontos da Sprint Race
+    if (posicaoSprint && PONTUACAO_SPRINT[posicaoSprint]) {
+        pontos += PONTUACAO_SPRINT[posicaoSprint];
     }
     
     return pontos;
@@ -137,6 +165,7 @@ async function abrirModalEstatisticas(numero) {
         // Preencher o formulário com os dados atuais
         document.getElementById('pilotoNumeroEstatisticas').value = numero;
         document.getElementById('posicaoCorrida').value = piloto.ultimaPosicao || '';
+        document.getElementById('posicaoSprint').value = piloto.ultimaPosicaoSprint || '';
         document.getElementById('voltaMaisRapida').checked = piloto.voltaMaisRapida || false;
         document.getElementById('pontosTotais').value = piloto.pontos || 0;
         document.getElementById('vitorias').value = piloto.vitorias || 0;
@@ -144,6 +173,7 @@ async function abrirModalEstatisticas(numero) {
         
         // Adicionar event listeners para atualização automática dos pontos
         document.getElementById('posicaoCorrida').addEventListener('change', atualizarPontos);
+        document.getElementById('posicaoSprint').addEventListener('change', atualizarPontos);
         document.getElementById('voltaMaisRapida').addEventListener('change', atualizarPontos);
         
         // Abrir o modal
@@ -157,27 +187,26 @@ async function abrirModalEstatisticas(numero) {
 // Função para atualizar os pontos automaticamente
 function atualizarPontos() {
     const posicao = document.getElementById('posicaoCorrida').value;
+    const posicaoSprint = document.getElementById('posicaoSprint').value;
     const voltaMaisRapida = document.getElementById('voltaMaisRapida').checked;
-    const pontosCorrida = calcularPontos(posicao, voltaMaisRapida);
+    const pontosCorrida = calcularPontos(posicao, voltaMaisRapida, posicaoSprint);
     
     document.getElementById('pontosTotais').value = pontosCorrida;
 }
 
 // Função para salvar as estatísticas
 async function salvarEstatisticas() {
-    const numero = document.getElementById('pilotoNumeroEstatisticas').value;
-    const ultimaPosicao = document.getElementById('posicaoCorrida').value;
-    const voltaMaisRapida = document.getElementById('voltaMaisRapida').checked;
-    const pontos = parseInt(document.getElementById('pontosTotais').value);
-    const vitorias = parseInt(document.getElementById('vitorias').value);
-    const poles = parseInt(document.getElementById('poles').value);
+    const numero = parseInt(document.getElementById('pilotoNumeroEstatisticas').value);
+    const pontos = parseInt(document.getElementById('pontosTotais').value) || 0;
+    const vitorias = parseInt(document.getElementById('vitorias').value) || 0;
+    const poles = parseInt(document.getElementById('poles').value) || 0;
 
     try {
+        console.log('Enviando dados:', { numero, pontos, vitorias, poles });
+        
         await fetchAPI(`/pilotos/${numero}/estatisticas`, {
             method: 'PUT',
             body: JSON.stringify({
-                ultimaPosicao,
-                voltaMaisRapida,
                 pontos,
                 vitorias,
                 poles
@@ -189,13 +218,77 @@ async function salvarEstatisticas() {
         modal.hide();
 
         // Atualizar a tabela
-        carregarPilotos();
+        await carregarPilotos();
         showSuccess('Estatísticas atualizadas com sucesso!');
     } catch (error) {
+        console.error('Erro completo:', error);
         showError('Erro ao atualizar estatísticas');
     }
 }
 
+// Função para adicionar ou atualizar um piloto
+async function handlePilotoSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const isEdicao = form.classList.contains('modo-edicao');
+    
+    const numero = parseInt(document.getElementById('numero').value);
+    const nome = document.getElementById('nome').value;
+    const equipe = document.getElementById('equipe').value;
+
+    try {
+        if (isEdicao) {
+            // Modo de edição
+            const pontos = parseInt(document.getElementById('pontosEdicao').value) || 0;
+            const vitorias = parseInt(document.getElementById('vitoriasEdicao').value) || 0;
+            const poles = parseInt(document.getElementById('polesEdicao').value) || 0;
+
+            await fetchAPI(`/pilotos/${numero}`, {
+                method: 'PUT',
+                body: JSON.stringify({ 
+                    numero, 
+                    nome, 
+                    equipe,
+                    pontos,
+                    vitorias,
+                    poles
+                })
+            });
+
+            // Resetar o formulário para o modo de adição
+            form.classList.remove('modo-edicao');
+            document.getElementById('estatisticasEdicao').style.display = 'none';
+            document.getElementById('numero').readOnly = false;
+            document.querySelector('#pilotoForm button[type="submit"]').textContent = 'Adicionar Piloto';
+            showSuccess('Piloto atualizado com sucesso!');
+        } else {
+            // Modo de adição
+            await fetchAPI('/pilotos', {
+                method: 'POST',
+                body: JSON.stringify({ numero, nome, equipe })
+            });
+            showSuccess('Piloto adicionado com sucesso!');
+        }
+        
+        form.reset();
+        carregarPilotos();
+    } catch (error) {
+        showError(isEdicao ? 'Erro ao atualizar piloto' : 'Erro ao adicionar piloto');
+    }
+}
+
 // Event Listeners
-document.getElementById('pilotoForm').addEventListener('submit', adicionarPiloto);
-document.addEventListener('DOMContentLoaded', carregarPilotos); 
+document.getElementById('pilotoForm').addEventListener('submit', handlePilotoSubmit);
+document.addEventListener('DOMContentLoaded', () => {
+    carregarPilotos();
+    
+    // Resetar o formulário quando clicar em Adicionar Piloto no menu
+    document.getElementById('pilotoForm').addEventListener('reset', () => {
+        const form = document.getElementById('pilotoForm');
+        form.classList.remove('modo-edicao');
+        document.getElementById('estatisticasEdicao').style.display = 'none';
+        document.getElementById('numero').readOnly = false;
+        document.querySelector('#pilotoForm button[type="submit"]').textContent = 'Adicionar Piloto';
+    });
+}); 
